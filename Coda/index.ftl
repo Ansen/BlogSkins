@@ -6,9 +6,9 @@
         <meta name="keywords" content="${metaKeywords}"/>
         <meta name="description" content="<#list articles as article>${article.articleTitle}<#if article_has_next>,</#if></#list>"/>
         </@head>
-        <link rel="stylesheet" type="text/css" href="/skins/${skinDirName}/css/style-home${miniPostfix}.css?${staticResourceVersion}" media="all" />
+        <link rel="stylesheet" type="text/css" href="${staticServePath}/skins/${skinDirName}/css/style-home${miniPostfix}.css?${staticResourceVersion}" media="all" />
         <style type="text/css">
-            #sitemap {background: url(/skins/${skinDirName}/images/moon.jpg) no-repeat;}
+            #sitemap {background: url(${staticServePath}/skins/${skinDirName}/images/moon.jpg) no-repeat;}
         </style>
     </head>
     <body id="home">
@@ -38,19 +38,19 @@
 			<div id="pagination">
 			<span class="pages">${paginationCurrentPageNum}/${paginationPageCount}</span>
             <#if 1 != paginationPageNums?first>
-            <a href="${path}/1">1st</a>
-            <a href="${path}/${paginationPreviousPageNum}">${TitelNO1}</a>
+            <a href="${staticServePath}${path}/1">1st</a>
+            <a href="${staticServePath}${path}/${paginationPreviousPageNum}">${TitelNO1}</a>
             </#if>
             <#list paginationPageNums as paginationPageNum>
             <#if paginationPageNum == paginationCurrentPageNum>
             <span class="current">${paginationPageNum}</span>
             <#else>
-            <a title="${paginationPageNum}" href="${path}/${paginationPageNum}">${paginationPageNum}</a>
+            <a title="${paginationPageNum}" href="${staticServePath}${path}/${paginationPageNum}">${paginationPageNum}</a>
             </#if>
             </#list>
             <#if paginationPageNums?last != paginationPageCount>
-            <a href="${path}/${paginationNextPageNum}">${TitelNO}</a>
-            <a title="Last ${TitelNO}" href="${path}/${paginationPageCount}">Last ${TitelNO}</a>
+            <a href="${staticServePath}${path}/${paginationNextPageNum}">${TitelNO}</a>
+            <a title="Last ${TitelNO}" href="${staticServePath}${path}/${paginationPageCount}">Last ${TitelNO}</a>
             </#if>
 			</div>
 			</#if>

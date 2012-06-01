@@ -6,7 +6,7 @@
         <meta name="keywords" content="${metaKeywords},${archiveDate.archiveDateYear}${archiveDate.archiveDateMonth}"/>
         <meta name="description" content="<#list articles as article>${article.articleTitle}<#if article_has_next>,</#if></#list>"/>
         </@head>
-		<link rel="stylesheet" type="text/css" href="/skins/${skinDirName}/css/style${miniPostfix}.css?${staticResourceVersion}" media="all" />
+		<link rel="stylesheet" type="text/css" href="${staticServePath}/skins/${skinDirName}/css/style${miniPostfix}.css?${staticResourceVersion}" media="all" />
     </head>
     <body id="blog">
 		<div id="wrap">

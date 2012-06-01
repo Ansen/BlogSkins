@@ -10,7 +10,7 @@
     </head>
     <body id="body">
         ${topBarReplacement}
-        <div id="top-bar" style="width: 100%; "></div>
+        <div id="top_bar"></div>
         <div id="wrapper">
             <#include "header.ftl">
             <div id="main">
@@ -40,7 +40,7 @@
                                 </a>
                             </div>
                             <div class="post_info_author">
-                                <a href="/authors/${article.authorId}" title="Posts&nbsp;&nbsp;by&nbsp;&nbsp;${article.authorName}" rel="author" style="opacity: 1; ">${article.authorName}</a>
+                                <a href="${staticServePath}/authors/${article.authorId}" title="Posts&nbsp;&nbsp;by&nbsp;&nbsp;${article.authorName}" rel="author" style="opacity: 1; ">${article.authorName}</a>
                             </div>
                         </div>
                         <div class="clear"></div>
@@ -64,7 +64,7 @@
                         <div class="post_meta">
                             <ul>
                                 <#list article.articleTags?split(",") as articleTag>
-                                <li><a href="/tags/${articleTag?url('UTF-8')}" rel="tag">${articleTag}</a><#if articleTag_has_next>,</#if></li>
+                                <li><a href="${staticServePath}/tags/${articleTag?url('UTF-8')}" rel="tag">${articleTag}</a><#if articleTag_has_next>,</#if></li>
                                 </#list>
                             </ul>
                         </div>  

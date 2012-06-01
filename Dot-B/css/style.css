@@ -61,8 +61,8 @@ sub{top:0.5ex}
 .right {
     float: right;
 }
-#top-bar, #bottom-bar, #rss, .menu-mark, .menu-mark2, .post_info_date, .post_info_author, .post_info_cat, .post_info_edit, .post_title_h2, .post_meta, .previous_post, .next_post, #comments-title, #sidebar ul li ul li, #header_search_area, #reply-title, pre{background-image:url("../images/all.png")}
-#top-bar{background-position:0 -632px; height:4px; font-size:0; width:20%; background-color:#F1F1F1}
+#top_bar, #bottom-bar, #rss, .menu-mark, .menu-mark2, .post_info_date, .post_info_author, .post_info_cat, .post_info_edit, .post_title_h2, .post_meta, .previous_post, .next_post, #comments-title, #sidebar ul li ul li, #header_search_area, #reply-title, pre{background-image:url("../images/all.png")}
+#top_bar{background-position:0 -632px; height:4px; font-size:0; width:20%; background-color:#F1F1F1}
 #bottom-bar{background-position:0 -639px; height:4px; font-size:0; background-color:#F1F1F1}
 #wrapper{background:none repeat scroll 0 0 #F1F1F1; width:960px; margin:0 auto}
 #header{background:none repeat scroll 0 0 #F1F1F1; border-left:1px solid #E8E8E8; border-right:1px solid #E8E8E8}
@@ -416,3 +416,79 @@ input[type="text"], input[type="password"], textarea{ border:1px solid #ccc;  co
     margin-top: 0;
     vertical-align: middle;
 }
+.recentcomments {
+    width:240px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: exllipsis;
+    word-wrap: normal;
+}
+/* start tags */
+#tags li {
+    float: left;
+    list-style: none;
+    height: 38px;
+}
+
+#tags a:hover {
+    text-shadow: 0 0 2px;
+}
+
+#tags a {
+    color: #777;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 1px 1px 3px #333;
+    float: left;
+    margin: 3px 6px;
+    padding: 3px 12px;
+}
+
+#tagsSide li a {
+    float: left;
+    line-height: 20px;
+    margin-right: 7px;
+    white-space: nowrap;
+}
+
+.tags1 {
+    font-size: 12px;
+    color: #A1A1A1;
+}
+
+.tags2 {
+    font-size: 14px;
+    color: #687F95;
+}
+
+.tags3 {
+    font-size: 16px;
+    color: #4C6E90;
+}
+
+.tags4 {
+    font-size: 18px;
+    color: #258;
+}
+
+.tags5 {
+    font-size: 20px;
+}
+
+#tagsSide .tags2 {
+    font-size: 14px;
+}
+
+#tagsSide .tags3 {
+    font-size: 16px;
+}
+
+#tagsSide .tags4 {
+    font-size: 18px;
+}
+
+#tagsSide .tags5 {
+    font-size: 20px;
+}
+/* end tags */

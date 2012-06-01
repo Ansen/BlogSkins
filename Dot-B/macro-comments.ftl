@@ -18,15 +18,15 @@
                     <span class="comment-meta commentmetadata">
                         ${comment.commentDate?string("yyyy-MM-dd HH:mm:ss")}
                         <a href="#${comment.oId}"> # </a>
-                        <#if comment.isReply>
-                        @  <a href="${servePath}${article.permalink}#${comment.commentOriginalCommentId}"
-                              onmouseover="page.showComment(this, '${comment.commentOriginalCommentId}', 35, 'li');"
-                              onmouseout="page.hideComment('${comment.commentOriginalCommentId}')">${comment.commentOriginalCommentName}</a>
-                        </#if>
                     </span><!-- .comment-meta .commentmetadata -->
                 </div>
                 <div class="comment-content">
                     <p>
+                     <#if comment.isReply>
+                            @  <a href="${article.permalink}#${comment.commentOriginalCommentId}"
+                                  onmouseover="page.showComment(this, '${comment.commentOriginalCommentId}', 35, 'li');"
+                                  onmouseout="page.hideComment('${comment.commentOriginalCommentId}')">${comment.commentOriginalCommentName}</a><br>
+                    </#if>
                         ${comment.commentContent}
                     </p>
                 </div>
@@ -52,7 +52,7 @@
             <p class="comment-form-url">
                 <label>Website</label><input id="commentURL" name="url" type="text" value="" size="30"></p>
             <p class="comment-form-code">
-                <label><img id="captcha" alt="validate" src="${servePath}/captcha.do" /></label>
+                <label><img id="captcha" alt="validate" src="/captcha.do" /></label>
                 <input id="commentValidate" name="code" type="text" value="" size="30">
             </p>
             <p class="comment-form-comment">
@@ -114,7 +114,7 @@
 
         if (state !== "") {
             var commentOriginalCommentName = $("#" + page.currentCommentId).find(".fn").text();
-            commentHTML += '&nbsp;@&nbsp;<a href="' + latkeConfig.servePath + result.commentSharpURL.split("#")[0] + '#' + page.currentCommentId + '"'
+            commentHTML += '&nbsp;@&nbsp;<a href="' + result.commentSharpURL.split("#")[0] + '#' + page.currentCommentId + '"'
                 + 'onmouseover="page.showComment(this, \'' + page.currentCommentId + '\', 35, \'li\');"'
                 + 'onmouseout="page.hideComment(\'' + page.currentCommentId + '\')">' + commentOriginalCommentName + '</a>';
         }
@@ -122,11 +122,6 @@
         commentHTML += '</span></div><div class="comment-content"><p>' +
             Util.replaceEmString($("#comment" + state).val().replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\n/g,"<br/>")) +
             '</p></div>';
-        
-            <#if page.commentable>
-            commentHTML += '<div class="reply"><a class="comment-reply-link" href="javascript:replyTo(\'' + result.oId + '\');">${replyLabel}</a></div>';
-            </#if>
-            
             commentHTML += '</div></li>';
         return commentHTML;
     }

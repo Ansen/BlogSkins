@@ -9,14 +9,14 @@
     </head>
     <body id="body">
         ${topBarReplacement}
-        <div id="top-bar" style="width: 100%; "></div>
+        <div id="top_bar"></div>
             <div id="wrapper">
                 <#include "header.ftl">
                 <div id="main">
                     <div id="content">
                         <div class="post">
                             <h2 class="post_title_h2">
-                                <a href="/tag-articles-feed.do?oId=${tag.oId}" class="feed-ico">
+                                <a href="${staticServePath}/tag-articles-feed.do?oId=${tag.oId}" class="feed-ico">
                                     ${tag1Label}
                                     ${tag.tagTitle}
                                     (${tag.tagPublishedRefCount})

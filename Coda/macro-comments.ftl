@@ -1,4 +1,4 @@
-<#macro comments commentList permalink>
+<#macro comments commentList article>
 <section class="left ver_side maincolum">
     <h3 id="commentcount" class="hor_side">${Comments}
         <div class="comstyle">
@@ -48,7 +48,7 @@
         </li>
         </#list>
     </ol>
-
+	<#if article.commentable>
     <div id="commentForm">
         <fieldset> 
             <label for="commentName">${commentNameLabel}&nbsp;*</label> 
@@ -69,7 +69,7 @@
                    id="commentValidate" 
                    class="text"
                    placeholder="Please enter the verification code"/>
-            <img id="captcha" class="code" alt="validate" src="/captcha.do" />
+            <img id="captcha" class="code" alt="validate" src="${staticServePath}/captcha.do" />
         </fieldset>
 		<fieldset>
         <div id="emotions">
@@ -107,11 +107,12 @@
             <span class="error-msg" id="commentErrorTip"></span>
         </fieldset>
     </div>
+	</#if>
 </section>
 </#macro>
 
 <#macro comment_script oId>
-<script type="text/javascript" src="/js/page${miniPostfix}.js?${staticResourceVersion}" charset="utf-8"></script>
+<script type="text/javascript" src="${staticServePath}/js/page${miniPostfix}.js?${staticResourceVersion}" charset="utf-8"></script>
 <script type="text/javascript">
     var page = new Page({
         "nameTooLongLabel": "${nameTooLongLabel}",

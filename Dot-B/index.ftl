@@ -9,7 +9,7 @@
     </head>
     <body id="body">
         ${topBarReplacement}
-        <div id="top-bar" style="width: 100%; "></div>
+        <div id="top_bar"></div>
         <div id="wrapper">
             <#include "header.ftl">
             <div id="main">

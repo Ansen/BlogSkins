@@ -11,16 +11,22 @@
     </div><!-- #copyright -->
     <a id="return_top" href="#wrapper" rel="nofollow" title="Go Top"> &Delta;Top</a>
 </div><!-- #footer -->
-<script type="text/javascript" src="/js/lib/jquery/jquery.min.js?${staticResourceVersion}" charset="utf-8"></script>
-<script type='text/javascript' src='/skins/${skinDirName}/js/all?${miniPostfix}.js?${staticResourceVersion}'></script>
-<script type="text/javascript" src="/js/common${miniPostfix}.js?${staticResourceVersion}" charset="utf-8"></script>
+<script type="text/javascript" src="${staticServePath}/js/lib/jquery/jquery.min.js?${staticResourceVersion}" charset="utf-8"></script>
+<script type='text/javascript' src='${staticServePath}/skins/${skinDirName}/js/all${miniPostfix}.js?${staticResourceVersion}'></script>
+<script type="text/javascript" src="${staticServePath}/js/common${miniPostfix}.js?${staticResourceVersion}" charset="utf-8"></script>
 <script type="text/javascript">
-    var latkeConfig = {
-        "servePath": "${servePath}",
-        "staticServePath": "${staticServePath}"
-    };
+var latkeConfig = {
+    "servePath": "${servePath}",
+    "staticServePath": "${staticServePath}"
+};
 
-    var common = new Common({
+    var Label =({
+	    "clearAllCacheLabel": "${clearAllCacheLabel}",
+        "clearCacheLabel": "${clearCacheLabel}",
+        "adminLabel": "${adminLabel}",
+        "logoutLabel": "${logoutLabel}",
+        "skinDirName": "${skinDirName}",
+        "loginLabel": "${loginLabel}",
         "em00Label": "${em00Label}",
         "em01Label": "${em01Label}",
         "em02Label": "${em02Label}",
@@ -38,8 +44,8 @@
         "em14Label": "${em14Label}"
     });
     
-    (function () {
-        common.init();
-        common.replaceSideEm($("#recent-comments li"));
-    })();
+    $(document).ready(function () {
+	    Util.init();
+		Util.replaceSideEm($("#recentComments .row"));
+	});
 </script>

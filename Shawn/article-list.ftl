@@ -3,8 +3,8 @@
     <div class="index">
         <h3>
             <a <#if article.hasUpdated || article_index==0> 
-                style="background: url('/skins/Shawn/images/starnew.png') no-repeat scroll 0% 0% transparent;" <#else>
-                style="background: url('/skins/Shawn/images/star.png') no-repeat scroll 0% 0% transparent;"
+                style="background: url('${staticServePath}/skins/Shawn/images/starnew.png') no-repeat scroll 0% 0% transparent;" <#else>
+                style="background: url('${staticServePath}/skins/Shawn/images/star.png') no-repeat scroll 0% 0% transparent;"
                 </#if> 
                 href="${article.articlePermalink}" 
                 rel="bookmark" 
@@ -38,19 +38,19 @@
         <div class="wp-pagenavi">
             <span class="pages">${paginationCurrentPageNum}/${paginationPageCount}</span>
             <#if 1 != paginationPageNums?first>
-            <a href="${path}/1">1st</a>
-            <a href="${path}/${paginationPreviousPageNum}">${TitelNO1}</a>
+            <a href="${staticServePath}${path}/1">1st</a>
+            <a href="${staticServePath}${path}/${paginationPreviousPageNum}">${TitelNO1}</a>
             </#if>
             <#list paginationPageNums as paginationPageNum>
             <#if paginationPageNum == paginationCurrentPageNum>
             <span class="current">${paginationPageNum}</span>
             <#else>
-            <a title="${paginationPageNum}" href="${path}/${paginationPageNum}">${paginationPageNum}</a>
+            <a title="${paginationPageNum}" href="${staticServePath}${path}/${paginationPageNum}">${paginationPageNum}</a>
             </#if>
             </#list>
             <#if paginationPageNums?last != paginationPageCount>
-            <a href="${path}/${paginationNextPageNum}">${TitelNO}</a>
-            <a title="Last ${TitelNO}" href="${path}/${paginationPageCount}">Last ${TitelNO}</a>
+            <a href="${staticServePath}${path}/${paginationNextPageNum}">${TitelNO}</a>
+            <a title="Last ${TitelNO}" href="${staticServePath}${path}/${paginationPageCount}">Last ${TitelNO}</a>
             </#if>
         </div>
     </div>

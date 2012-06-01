@@ -44,7 +44,7 @@ jQuery(document).ready(function() {
         return strHex;
     };
                         
-    jQuery("#top-bar").animate({
+    jQuery("#top_bar").animate({
         width: "100%"
     },
     {

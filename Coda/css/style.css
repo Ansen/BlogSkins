@@ -251,7 +251,7 @@ a[rel="external"]{padding-right:9px;margin-right:3px;background:url("../images/i
 /* start emotions */
 .em00, .em01, .em02, .em03, .em04, .em05, .em06, .em07, .em08, .em09, 
 .em10, .em11, .em12, .em13, .em14 {
-    background-image: url("/images/emotions-classic.png");
+    background-image: url("../images/emotions-classic.png");
     float: left;
     height: 24px;
     margin-right: 5px;

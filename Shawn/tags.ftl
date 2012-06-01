@@ -17,7 +17,7 @@
                     <#list tags as tag>
                     <li>
                         <a data-count="${tag.tagPublishedRefCount}"
-                           href="/tags/${tag.tagTitle?url('UTF-8')}" title="${tag.tagTitle}">
+                           href="${staticServePath}/tags/${tag.tagTitle?url('UTF-8')}" title="${tag.tagTitle}">
                             <span>${tag.tagTitle}</span>
                             (<b>${tag.tagPublishedRefCount}</b>)
                         </a>
@@ -29,7 +29,7 @@
             <#include "footer.ftl">
         </div>
         <script type="text/javascript">
-            common.buildTags();
+            Util.buildTags()
         </script>
     </body>
 </html>

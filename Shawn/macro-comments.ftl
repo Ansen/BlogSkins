@@ -12,7 +12,7 @@
                         <img data-id="${comment.oId}" onclick="replyTo('${comment.oId}')" 
                              class="atreply" 
                              title="${ClickToReply} ${comment.commentName}" 
-                             src="/skins/${skinDirName}/images/reply.png" 
+                             src="${staticServePath}/skins/${skinDirName}/images/reply.png" 
                              alt="rebutton"
                              width="20"
                              height="16"
@@ -76,7 +76,7 @@
                     </label>
                     <input type="text" id="commentValidate" class="text" />
                     <span class="tips" style="background: none;border: none;">
-                    <img id="captcha" alt="validate" src="/captcha.do" />
+                    <img id="captcha" alt="validate" src="${staticServePath}/captcha.do" />
                     </span>
             </p>
         </div>
@@ -101,14 +101,14 @@
 		<li>${Endnotes3}</li>
         <li>${Endnotes4}<code style="padding:2px 5px">&lt; = &amp;lt;</code>,<code style="padding:2px 5px">&gt; = &amp;gt;</code> .</li>
         <li>${Endnotes5}</li>
-        <li>${Endnotes6} <img src="/skins/${skinDirName}/images/reply.png" width="20" height="16" alt="Reply" style="vertical-align:middle"> ${Endnotes7} <code style="padding:2px 5px">${Endnotes8}</code>.</li>
+        <li>${Endnotes6} <img src="${staticServePath}/skins/${skinDirName}/images/reply.png" width="20" height="16" alt="Reply" style="vertical-align:middle"> ${Endnotes7} <code style="padding:2px 5px">${Endnotes8}</code>.</li>
         <li>${Endnotes9}</li>
     </ul>
 </div>
 </#macro>
 
 <#macro comment_script oId>
-<script type="text/javascript" src="/js/page${miniPostfix}.js?${staticResourceVersion}" charset="utf-8"></script>
+<script type="text/javascript" src="${staticServePath}/js/page${miniPostfix}.js?${staticResourceVersion}" charset="utf-8"></script>
 <script type="text/javascript">
     var page = new Page({
         "nameTooLongLabel": "${nameTooLongLabel}",
@@ -126,7 +126,7 @@
     });
 
     var addComment = function (result, state) {
-        var name = '<a rel="external nofollow" class="url" href="">' + $("#commentName" + state).val() + '</a>';
+        var name = result.replyNameHTML;
         if ($("#commentURL" + state).val().replace(/\s/g, "") === "") {
             name = $("#commentName" + state).val();
         }

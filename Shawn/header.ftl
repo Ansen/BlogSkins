@@ -1,14 +1,14 @@
 <div id="header">
     <h1 id="title">
-        <a href="/">${blogTitle}</a>
+        <a href="${staticServePath}">${blogTitle}</a>
     </h1>
     <h2 id="discription">${blogSubtitle}</h2>
     <ul class="nav" id="header-navi">
         <li>
-            <a href="/" title="${indexLabel}">${indexLabel}</a>
+            <a href="${staticServePath}" title="${indexLabel}">${indexLabel}</a>
         </li>
         <li>
-            <a href="/tags.html">${allTagsLabel}</a>  
+            <a href="${staticServePath}/tags.html">${allTagsLabel}</a>  
         </li>
         <#list pageNavigations as page>
         <li>

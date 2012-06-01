@@ -9,7 +9,7 @@
     </head>
     <body id="body">
         ${topBarReplacement}
-        <div id="top-bar" style="width: 100%; "></div>
+        <div id="top_bar"></div>
             <div id="wrapper">
             	<#include "header.ftl">
                 <div id="main">
@@ -24,7 +24,7 @@
                                     <#list tags as tag>
                                     <li>
                                         <a data-count="${tag.tagPublishedRefCount}"
-                                           href="/tags/${tag.tagTitle?url('UTF-8')}" title="${tag.tagTitle}">
+                                           href="${staticServePath}/tags/${tag.tagTitle?url('UTF-8')}" title="${tag.tagTitle}">
                                             <span>${tag.tagTitle}</span>
                                             (<b>${tag.tagPublishedRefCount}</b>)
                                         </a>
@@ -42,6 +42,9 @@
                 </div>
                 <div class="clear"></div>
                 <#include "footer.ftl">
+				 <script type="text/javascript">
+					Util.buildTags();
+				</script>
             </div>
             <div class="clear"></div>
             <div id="bottom-bar"></div>

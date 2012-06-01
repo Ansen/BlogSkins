@@ -7,7 +7,7 @@
         <meta name="keywords" content="${article.articleTags}" />
         <meta name="description" content="${article.articleAbstract?html}" />
         </@head>
-        <script type="text/javascript" src="/skins/${skinDirName}/js/ed.js?${staticResourceVersion}"></script>
+        <script type="text/javascript" src="${staticServePath}/skins/${skinDirName}${staticServePath}/js/ed.js?${staticResourceVersion}"></script>
     </head>
     <body>
         <div id="loading" style="display: none; "></div>
@@ -64,7 +64,7 @@
                         <div id="postail" style="border-top-left-radius: 7px 7px; border-top-right-radius: 7px 7px; border-bottom-right-radius: 7px 7px; border-bottom-left-radius: 7px 7px; position: relative; zoom: 1; ">
                             Tag(s): 
                             <#list article.articleTags?split(",") as articleTag>
-                            <a href="/tags/${articleTag?url('UTF-8')}">${articleTag}</a>
+                            <a href="${staticServePath}/tags/${articleTag?url('UTF-8')}">${articleTag}</a>
                             </#list>
                             <div style="display: inherit">
                                 <canvas width="7px" height="7px" style="position:absolute;top:-2px;left:-2px;"></canvas>
@@ -93,9 +93,15 @@
                             <span style="color:red;font-weight:bold">&hearts;&hearts;&hearts;</span>
                         </div>
                         <div id="relatedul" style="display: none;" class="hidden">
-                            <div id="relevantArticles"></div>
-                            <div id="randomArticles"></div>
-                            <div id="externalRelevantArticles"></div>
+							<#if 0 != randomArticlesDisplayCount>
+								page.loadRandomArticles();
+							</#if>
+							<#if 0 != relevantArticlesDisplayCount>
+								page.loadRelevantArticles('${article.oId}', '<h4>${relevantArticles1Label}</h4>');
+							</#if>
+							<#if 0 != externalRelevantArticlesDisplayCount>
+								page.loadExternalRelevantArticles("<#list article.articleTags?split(",") as articleTag>${articleTag}<#if articleTag_has_next>,</#if></#list>");
+							</#if>
                         </div>
                     </div>
                 </div>

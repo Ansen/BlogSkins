@@ -31,7 +31,7 @@
         <div class="opaque_5 post_tags">
             <span class="tags icon">
                 <#list article.articleTags?split(",") as articleTag>
-                <a href="/tags/${articleTag?url('UTF-8')}" rel="tag">${articleTag}</a>
+                <a href="${staticServePath}/tags/${articleTag?url('UTF-8')}" rel="tag">${articleTag}</a>
                 </#list>
             </span>
         </div>
@@ -43,19 +43,19 @@
 <div class="pagination">
 <span class="pages">${paginationCurrentPageNum}/${paginationPageCount}</span>
 <#if 1 != paginationPageNums?first>
-<a href="${path}/1">1st</a>
-<a href="${path}/${paginationPreviousPageNum}">${TitelNO1}</a>
+<a href="${staticServePath}${path}/1">1st</a>
+<a href="${staticServePath}${path}/${paginationPreviousPageNum}">${TitelNO1}</a>
 </#if>
 <#list paginationPageNums as paginationPageNum>
 <#if paginationPageNum == paginationCurrentPageNum>
 <span class="current">${paginationPageNum}</span>
 <#else>
-<a title="${paginationPageNum}" href="${path}/${paginationPageNum}">${paginationPageNum}</a>
+<a title="${paginationPageNum}" href="${staticServePath}${path}/${paginationPageNum}">${paginationPageNum}</a>
 </#if>
 </#list>
 <#if paginationPageNums?last != paginationPageCount>
-<a href="${path}/${paginationNextPageNum}">${TitelNO}</a>
-<a title="Last ${TitelNO}" href="${path}/${paginationPageCount}">Last ${TitelNO}</a>
+<a href="${staticServePath}${path}/${paginationNextPageNum}">${TitelNO}</a>
+<a title="Last ${TitelNO}" href="${staticServePath}${path}/${paginationPageCount}">Last ${TitelNO}</a>
 </#if>
 </div>
 </#if>

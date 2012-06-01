@@ -6,7 +6,7 @@
         <meta name="keywords" content="${article.articleTags}" />
         <meta name="description" content="${article.articleAbstract?html}" />
         </@head>
-        <link rel="stylesheet" type="text/css" href="/skins/${skinDirName}/css/style${miniPostfix}.css?${staticResourceVersion}" media="all" />
+        <link rel="stylesheet" type="text/css" href="${staticServePath}/skins/${skinDirName}/css/style${miniPostfix}.css?${staticResourceVersion}" media="all" />
     </head>
     <body id="blog">
         <div id="loading" style="display: none; "></div>

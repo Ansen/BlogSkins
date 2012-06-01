@@ -35,7 +35,7 @@
 			<div class="post_meta">
 				<ul>
 					<#list article.articleTags?split(",") as articleTag>
-						<li><a href="/tags/${articleTag?url('UTF-8')}" rel="tag">${articleTag}</a><#if articleTag_has_next></#if></li>
+						<li><a href="${staticServePath}/tags/${articleTag?url('UTF-8')}" rel="tag">${articleTag}</a><#if articleTag_has_next></#if></li>
 					</#list>
 				</ul>
 			</div>  
@@ -48,20 +48,22 @@
 <#if 0 != paginationPageCount>
 	<div class="page_navi">
 	<ul class="page-numbers">
-	        <#if 1 != paginationPageNums?first>
-	        <li><a class="prev page-numbers" href="${path}/${paginationNextPageNum}">${nextPagePabel}</a></li>
-	        </#if>
+            <#if 1 != paginationPageNums?first>
+            <li><a href="${staticServePath}" title="${nextPagePabel}">${firstPageLabel}</a>
+            <a href="${staticServePath}${path}/${paginationPreviousPageNum}" title="${previousPageLabel}"><<</a></li>
+            </#if>
             <#list paginationPageNums as paginationPageNum>
             <#if paginationPageNum == paginationCurrentPageNum>
             <li><span class="current">${paginationPageNum}</span></li>
             <#else>
-            <li><a title="${paginationPageNum}" href="${path}/${paginationPageNum}">${paginationPageNum}</a></li>
+            <li><a title="${paginationPageNum}" href="${staticServePath}${path}/${paginationPageNum}">${paginationPageNum}</a></li>
             </#if>
             </#list>
             <#if paginationPageNums?last != paginationPageCount>
-            <li><a class="next page-numbers" href="${path}/${paginationNextPageNum}">${nextPagePabel}</a>
-            <a class="next page-numbers" title="Last ${TitelNO}" href="${path}/${paginationPageCount}">Last ${TitelNO}</a></li>
+            <li><a href="${staticServePath}${path}/${paginationNextPageNum}" title="${nextPagePabel}">>></a>
+            <a href="${staticServePath}${path}/${paginationPageCount}" title="${lastPageLabel}">${lastPageLabel}</a></li>
             </#if>
+            &nbsp;&nbsp;${sumLabel} ${paginationPageCount} ${pageLabel}
 	</ul>
 	</div>
 </#if>

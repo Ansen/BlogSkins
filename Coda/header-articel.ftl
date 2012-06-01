@@ -3,10 +3,10 @@
     <nav>
         <ul class="menu clear">
             <li>
-                <a href="/" title="${indexLabel}">${indexLabel}</a>
+                <a href="${staticServePath}" title="${indexLabel}">${indexLabel}</a>
             </li>
             <li>
-                <a href="/tags.html">${allTagsLabel}</a>  
+                <a href="${staticServePath}/tags.html">${allTagsLabel}</a>  
             </li>
             <#list pageNavigations as page>
             <li>
@@ -19,7 +19,7 @@
         <div class="right">${blogSubtitle}</div>
         <div>
             <p class="icon post_subr">
-                <a href="http://fusion.google.com/add?feedurl=${blogHost}/blog-articles-feed.do">Google${RSS}</a>${Or}
+                <a href="http://fusion.google.com/add?feedurl=${blogHost}${staticServePath}/blog-articles-feed.do">Google${RSS}</a>${Or}
                 <a href="http://xianguo.com/subscribe?url=http%3A%2F%2F${blogHost}%2Fblog-articles-feed.do">${XianGuo}${RSS}</a>
             </p>
             <p class="icon me_tsina">

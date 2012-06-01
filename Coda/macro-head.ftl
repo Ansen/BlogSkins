@@ -8,11 +8,11 @@
 <meta name="revised" content="B3log, ${year}" />
 <meta http-equiv="Window-target" content="_top" />
 <link href="blog-articles-feed.do" title="ATOM" type="application/atom+xml" rel="alternate" />
-<link rel="icon" type="image/png" href="/favicon.png" />
+<link rel="icon" type="image/png" href="${staticServePath}/favicon.png" />
 <meta name="author" content="Coda" />
 <link rel="canonical" href="${blogHost}" />
-<link rel="stylesheet" type="text/css" href="/skins/${skinDirName}/css/global${miniPostfix}.css?${staticResourceVersion}" media="all" />
-<script type="text/javascript" src="/js/lib/jquery/jquery.min.js" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="${staticServePath}/skins/${skinDirName}/css/global${miniPostfix}.css?${staticResourceVersion}" media="all" />
+<script type="text/javascript" src="${staticServePath}/js/lib/jquery/jquery.min.js" charset="utf-8"></script>
 <script type="text/javascript">
  (function() {
         if (! 

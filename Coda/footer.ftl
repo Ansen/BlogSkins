@@ -9,14 +9,14 @@
     | Theme by
     <a href="http://www.ansen.org" target="_blank">Ansen</a>&<a href="http://vanessa.b3log.org/" target="_blank">Vanessa</a>.
 </footer>
-<#if "" == miniPostfix>
-<script type="text/javascript" src="/js/lib/jquery/jquery.min.js?${staticResourceVersion}" charset="utf-8"></script>
-<#else>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js" charset="utf-8"></script>
-</#if>
-<script type="text/javascript" src="/js/common${miniPostfix}.js?${staticResourceVersion}" charset="utf-8"></script>
+<script type="text/javascript" src="${staticServePath}/js/lib/jquery/jquery.min.js?${staticResourceVersion}" charset="utf-8"></script>
+<script type="text/javascript" src="${staticServePath}/js/common${miniPostfix}.js?${staticResourceVersion}" charset="utf-8"></script>
 <script type="text/javascript">
-    var common = new Common({
+    var latkeConfig = {
+        "servePath": "${servePath}",
+        "staticServePath": "${staticServePath}"
+    };
+    var Label = ({
         "em00Label": "${em00Label}",
         "em01Label": "${em01Label}",
         "em02Label": "${em02Label}",
@@ -33,7 +33,8 @@
         "em13Label": "${em13Label}",
         "em14Label": "${em14Label}"
     });
-    
-    common.init();
-    common.replaceSideEm($("#recentComments .row"));
-</script>    
+    $(document).ready(function () {
+	    Util.init();
+		Util.replaceSideEm($("#recentComments .row"));
+	});
+</script>${plugins}    

@@ -1,14 +1,12 @@
 <aside class="left ver_side">
-        <form id="searchform" target="_blank" method="get" action="http://www.google.com/search">
-            <fieldset class="opaque_10">
-                <input id="s" class="search icon" type="text" name="q" />
-                <input type="submit" id="searchsubmit" class="button" value="${Search}" />
-                <input type="hidden" name="oe" value="UTF-8" />
-                <input type="hidden" name="ie" value="UTF-8" />
-                <input type="hidden" name="newwindow" value="0" />
-                <input type="hidden" name="sitesearch" value="www.ansen.org" />
-            </fieldset>
-        </form>
+	<form id="searchform" target="_blank" action="http://www.google.com/cse">
+        <fieldset class="opaque_10">
+            <input type="hidden" name="cx" value="003546163348813487923:cn_wvlqmqvs">
+            <input type="hidden" name="ie" value="UTF-8">
+            <input type="text" class="search icon" name="q" id="s" size="25">
+            <input type="submit" id="searchsubmit" class="button" value="搜索">
+        </fieldset> 
+    </form>
     <div class="hor_side"></div>
     <#if "" != noticeBoard>
     <div class="widget hor_side">
@@ -42,7 +40,7 @@
     <#if 0 != mostUsedTags?size>
     <div class="widget hor_side">
         <#list mostUsedTags as tag>
-        <a data-count="${tag.tagPublishedRefCount}" href="/tags/${tag.tagTitle?url('UTF-8')}" class="tag-link-37" title="${tag.tagPublishedRefCount} 个话题" style="font-size: 14.75px;">${tag.tagTitle}</a>
+        <a data-count="${tag.tagPublishedRefCount}" href="${staticServePath}/tags/${tag.tagTitle?url('UTF-8')}" class="tag-link-37" title="${tag.tagPublishedRefCount} 个话题" style="font-size: 14.75px;">${tag.tagTitle}</a>
         </#list>
     </div>
     </#if>
@@ -64,6 +62,18 @@
         </ul>
     </div>
     </#if>
+	    <#if 0 != links?size>
+    <div class="widget hor_side">
+        <h3>${linkLabel}</h3>
+            <ul>
+                <#list links as link>
+                <li>
+                    <a href="${link.linkAddress}" title ="${link.linkTitle}" style="background:url(http://www.google.com/s2/favicons?domain_url=${link.linkAddress}) no-repeat 0 center;padding:2px 0 2px 20px" target="_blank">${link.linkTitle}</a>
+                </li>
+                </#list>
+            </ul>
+    </div>
+    </#if>
     <#if 0 != archiveDates?size>
     <div class="widget hor_side">
         <h3><span>${archiveLabel}</span></h3>
@@ -71,11 +81,11 @@
             <#list archiveDates as archiveDate>
             <li data-year="${archiveDate.archiveDateYear}">
                 <#if "en" == localeString?substring(0, 2)>
-                <a href="/archives/${archiveDate.archiveDateYear}/${archiveDate.archiveDateMonth}"
+                <a href="${staticServePath}/archives/${archiveDate.archiveDateYear}/${archiveDate.archiveDateMonth}"
                    title="${archiveDate.monthName} ${archiveDate.archiveDateYear}(${archiveDate.archiveDatePublishedArticleCount})">
                     ${archiveDate.monthName} ${archiveDate.archiveDateYear}</a>(${archiveDate.archiveDatePublishedArticleCount})
                 <#else>
-                <a href="/archives/${archiveDate.archiveDateYear}/${archiveDate.archiveDateMonth}"
+                <a href="${staticServePath}/archives/${archiveDate.archiveDateYear}/${archiveDate.archiveDateMonth}"
                    title="${archiveDate.archiveDateYear} ${yearLabel} ${archiveDate.archiveDateMonth} ${monthLabel}(${archiveDate.archiveDatePublishedArticleCount})">
                     ${archiveDate.archiveDateYear} ${yearLabel} ${archiveDate.archiveDateMonth} ${monthLabel}</a>(${archiveDate.archiveDatePublishedArticleCount})
                 </#if>

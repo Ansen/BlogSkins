@@ -7,7 +7,7 @@
         <meta name="keywords" content="${metaKeywords},${page.pageTitle}" />
         <meta name="description" content="${metaDescription}" />
         </@head>
-        <link rel="stylesheet" type="text/css" href="/skins/${skinDirName}/css/style${miniPostfix}.css?${staticResourceVersion}" media="all" />
+        <link rel="stylesheet" type="text/css" href="${staticServePath}/skins/${skinDirName}/css/style${miniPostfix}.css?${staticResourceVersion}" media="all" />
     </head>
     <body id="blog">
 		${topBarReplacement}
@@ -37,10 +37,10 @@
 									</li>
 									<li><a href="#" class="subscribe icon"> ${RSS}</a>
 										<ul class="opaque_10 subscribe_to">
-											<li><a target="_blank" rel="nofollow" title="${RSSToGoogle}" href="http://fusion.google.com/add?feedurl=http://${blogHost}/blog-articles-feed.do" class="icon me_greader">GReader</a></li>
-											<li><a target="_blank" rel="nofollow" title="${RSSToXianGuo}" href="http://www.xianguo.com/subscribe.php?url=http://${blogHost}/blog-articles-feed.do" class="icon me_xianguo">${XianGuo}</a></li>
-											<li><a target="_blank" rel="nofollow" title="${RSSToZhuaXia}" href="http://www.zhuaxia.com/add_channel.php?url=http://${blogHost}/blog-articles-feed.do" class="icon me_zhuaxia">抓虾</a></li>
-											<li><a target="_blank" rel="nofollow" title="{RSSToYaHoo}" href="http://add.my.yahoo.com/rss?url=http://${blogHost}/blog-articles-feed.do" class="icon me_yahoo">Yahoo!</a></li>
+											<li><a target="_blank" rel="nofollow" title="${RSSToGoogle}" href="http://fusion.google.com/add?feedurl=http://${blogHost}${staticServePath}/blog-articles-feed.do" class="icon me_greader">GReader</a></li>
+											<li><a target="_blank" rel="nofollow" title="${RSSToXianGuo}" href="http://www.xianguo.com/subscribe.php?url=http://${blogHost}${staticServePath}/blog-articles-feed.do" class="icon me_xianguo">${XianGuo}</a></li>
+											<li><a target="_blank" rel="nofollow" title="${RSSToZhuaXia}" href="http://www.zhuaxia.com/add_channel.php?url=http://${blogHost}${staticServePath}/blog-articles-feed.do" class="icon me_zhuaxia">抓虾</a></li>
+											<li><a target="_blank" rel="nofollow" title="{RSSToYaHoo}" href="http://add.my.yahoo.com/rss?url=http://${blogHost}${staticServePath}/blog-articles-feed.do" class="icon me_yahoo">Yahoo!</a></li>
 										</ul>
 									</li>
 									<li><a href="#" class="trackback icon">${YYTGDZ}</a></li>
@@ -64,7 +64,7 @@
                             <li><a class="comment_post comment_on icon" rel ="nofollow" href="#comments"  title="Skip to Commentlist">${SendYouComments}</a></li>
                         </ul>
                     </div>
-							<@comments commentList=pageComments permalink=page.pagePermalink></@comments>
+							<@comments commentList=pageComments article=page></@comments>
 					</article>
 				</div>
 				<#include "side.ftl">

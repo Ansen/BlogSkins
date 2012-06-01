@@ -6,9 +6,10 @@
         <meta name="keywords" content="${metaKeywords},${allTagsLabel}"/>
         <meta name="description" content="<#list tags as tag>${tag.tagTitle}<#if tag_has_next>,</#if></#list>"/>
         </@head>
-        <link rel="stylesheet" type="text/css" href="/skins/${skinDirName}/css/style${miniPostfix}.css?${staticResourceVersion}" media="all" />
+        <link rel="stylesheet" type="text/css" href="${staticServePath}/skins/${skinDirName}/css/style${miniPostfix}.css?${staticResourceVersion}" media="all" />
     </head>
     <body id="blog">
+		${topBarReplacement}
         <div id="wrap">
             <#include "header-articel.ftl">
             <div id="content" class="clear">
@@ -17,7 +18,7 @@
                         <#list tags as tag>
                         <li>
                             <a data-count="${tag.tagPublishedRefCount}"
-                               href="/tags/${tag.tagTitle?url('UTF-8')}" title="${tag.tagTitle}">
+                               href="${staticServePath}/tags/${tag.tagTitle?url('UTF-8')}" title="${tag.tagTitle}">
                                 <span>${tag.tagTitle}</span>
                                 (<b>${tag.tagPublishedRefCount}</b>)
                             </a>
@@ -30,7 +31,7 @@
             </div>
         </div>
         <script type="text/javascript">
-            common.buildTags();
+            Util.buildTags()
         </script>
     </body>
 </html>

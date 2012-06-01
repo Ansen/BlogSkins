@@ -14,7 +14,7 @@
             <#include "header.ftl">
             <div id="content">
                 <h2 class="pagetitle">
-                    <a href="/tag-articles-feed.do?oId=${tag.oId}" class="feed-ico">
+                    <a href="${staticServePath}/tag-articles-feed.do?oId=${tag.oId}" class="feed-ico">
                         ${tag1Label}
                         ${tag.tagTitle}
                         (${tag.tagPublishedRefCount})
