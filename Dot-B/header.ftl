@@ -12,7 +12,7 @@
            					<input type="text" id="s" name="q" size="25"  value="type, hit enter" size="35" maxlength="50" x-webkit-speech="" />
    					</form>
 				</div>
-				<a id="rss" rel="external nofollow" href="${blogHost}/blog-articles-feed.do" title="RSS FEED" ></a>
+				<a id="rss" rel="external nofollow" href="${staticServePath}/blog-articles-feed.do" title="RSS FEED" ></a>
 			</div>
 			<div class="clear"></div>
 			<div id="social">
