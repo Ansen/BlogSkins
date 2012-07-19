@@ -125,7 +125,7 @@ sub{top:0.5ex}
 .post_content td{border-top:1px solid #DDD; padding:6px 10px 6px 0}
 .post_content #s{width:75%}
 .post_content ul, .post_content ol{margin:0 0 1em 2em}
-.post_content ul, .post_content li{list-style:square outside none}
+.post_content ul{list-style:square outside none}
 .post_content ol{list-style-type:decimal}
 .post_title_h2 a, .post_title_h2 a:visited{color:#555; display:inline-block}
 .post_info_top{color:#999; margin:0 10px; overflow:hidden}
