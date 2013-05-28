@@ -1,7 +1,7 @@
 <div class="sidebar-fixed" style="position: fixed; top: 20px;">
         <#if "" != noticeBoard>
-    <div>
-        <h4>${noticeBoardLabel}</h4>
+    <div class="block">
+        <h3>${noticeBoardLabel}</h3>
         <div>${noticeBoard}</div>
     </div>
     </#if>
@@ -12,7 +12,7 @@
         <ul>
             <#list mostCommentArticles as article>
                 <li>
-                    <a title="${article.articleTitle}" href="${article.articlePermalink}">{article.articleTitle}</a>
+                    <a title="${article.articleTitle}" href="${article.articlePermalink}">${article.articleTitle}</a>
                 </li>
             </#list>
         </ul> 
@@ -61,7 +61,7 @@
     </div>
     </#if>
 <div class="clear"></div>
-    #if 0 != links?size>
+    <#if 0 != links?size>
         <div class="block links bicolumn">
             <h3>${linkLabel}</h3> 
             <ul> 
