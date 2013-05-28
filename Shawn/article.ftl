@@ -7,7 +7,7 @@
         <meta name="keywords" content="${article.articleTags}" />
         <meta name="description" content="${article.articleAbstract?html}" />
         </@head>
-        <script type="text/javascript" src="${staticServePath}/skins/${skinDirName}${staticServePath}/js/ed.js?${staticResourceVersion}"></script>
+        <script type="text/javascript" src="${servePath}/skins/${skinDirName}${servePath}/js/ed.js?${staticResourceVersion}"></script>
     </head>
     <body>
         <div id="loading" style="display: none; "></div>
@@ -64,7 +64,7 @@
                         <div id="postail" style="border-top-left-radius: 7px 7px; border-top-right-radius: 7px 7px; border-bottom-right-radius: 7px 7px; border-bottom-left-radius: 7px 7px; position: relative; zoom: 1; ">
                             Tag(s): 
                             <#list article.articleTags?split(",") as articleTag>
-                            <a href="${staticServePath}/tags/${articleTag?url('UTF-8')}">${articleTag}</a>
+                            <a href="${servePath}/tags/${articleTag?url('UTF-8')}">${articleTag}</a>
                             </#list>
                             <div style="display: inherit">
                                 <canvas width="7px" height="7px" style="position:absolute;top:-2px;left:-2px;"></canvas>

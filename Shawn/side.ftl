@@ -1,10 +1,10 @@
 <div id="sidebar">
     <ul>
         <li class="rssfeed">
-            <a rel="external nofollow" href="${staticServePath}/blog-articles-feed.do" title="Feed ${FeedaDDress}：${blogHost}${staticServePath}/blog-articles-feed.do">
-                <img src="${staticServePath}/skins/${skinDirName}/images/rss.png" width="64" height="64" alt="Subscribe" style="opacity: 0.7; " />
+            <a rel="external nofollow" href="${servePath}/blog-articles-feed.do" title="Feed ${FeedaDDress}：${blogHost}${servePath}/blog-articles-feed.do">
+                <img src="${servePath}/skins/${skinDirName}/images/rss.png" width="64" height="64" alt="Subscribe" style="opacity: 0.7; " />
             </a> 
-            <a rel="external nofollow" href="http://fusion.google.com/add?feedurl=${blogHost}${staticServePath}/blog-articles-feed.do" title="Google Reader">
+            <a rel="external nofollow" href="http://fusion.google.com/add?feedurl=${blogHost}${servePath}/blog-articles-feed.do" title="Google Reader">
                 <span style="color:#1B4EBE">G</span><span style="color:#D42609">o</span><span style="color:#E8B801">o</span><span style="color:#1B4EBE">g</span><span style="color:#1DA224;font-size:13px">l</span><span style="color:#D42609">e</span>
             </a> | 
             <a rel="external nofollow" href="http://xianguo.com/subscribe?url=http%3A%2F%2F${blogHost}%2Fblog-articles-feed.do" title="${XianGuoReader}">
@@ -58,7 +58,7 @@
             <ul id="widget_tag_cloud">
                 <#list mostUsedTags as tag>
                 <a data-count="${tag.tagPublishedRefCount}" title="${tag.tagTitle}(${tag.tagPublishedRefCount})" 
-                   href="${staticServePath}/tags/${tag.tagTitle?url('UTF-8')}">${tag.tagTitle}</a>
+                   href="${servePath}/tags/${tag.tagTitle?url('UTF-8')}">${tag.tagTitle}</a>
                 </#list>
             </ul>
             <!-- color tag -->
@@ -118,9 +118,9 @@
                 <#list archiveDates as archiveDate>
                 <li>
                     <#if "en" == localeString?substring(0, 2)>
-                    <a href="${staticServePath}/archives/${archiveDate.archiveDateYear}/${archiveDate.archiveDateMonth}" title="${archiveDate.monthName} ${archiveDate.archiveDateYear}(${archiveDate.archiveDatePublishedArticleCount})">${archiveDate.monthName} ${archiveDate.archiveDateYear}</a>(${archiveDate.archiveDatePublishedArticleCount})
+                    <a href="${servePath}/archives/${archiveDate.archiveDateYear}/${archiveDate.archiveDateMonth}" title="${archiveDate.monthName} ${archiveDate.archiveDateYear}(${archiveDate.archiveDatePublishedArticleCount})">${archiveDate.monthName} ${archiveDate.archiveDateYear}</a>(${archiveDate.archiveDatePublishedArticleCount})
                     <#else>
-                    <a href="${staticServePath}/archives/${archiveDate.archiveDateYear}/${archiveDate.archiveDateMonth}" title="${archiveDate.archiveDateYear} ${yearLabel} ${archiveDate.archiveDateMonth} ${monthLabel}(${archiveDate.archiveDatePublishedArticleCount})">${archiveDate.archiveDateYear} ${yearLabel} ${archiveDate.archiveDateMonth} ${monthLabel}</a>(${archiveDate.archiveDatePublishedArticleCount})
+                    <a href="${servePath}/archives/${archiveDate.archiveDateYear}/${archiveDate.archiveDateMonth}" title="${archiveDate.archiveDateYear} ${yearLabel} ${archiveDate.archiveDateMonth} ${monthLabel}(${archiveDate.archiveDatePublishedArticleCount})">${archiveDate.archiveDateYear} ${yearLabel} ${archiveDate.archiveDateMonth} ${monthLabel}</a>(${archiveDate.archiveDatePublishedArticleCount})
                     </#if>
                 </li>
                 </#list>

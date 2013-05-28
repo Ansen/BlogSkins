@@ -16,17 +16,13 @@ $(document).ready(function() {
     //$(".timeta").html($(".meta").html());
     
     // set selected navi
-    $("#header-navi li").each(function (i) {
-        if (i < $("#header-navi li").length) {
-            var $it = $(this),
-            locationURL = window.location.pathname + window.location.search;
-            if (i === 0 && (locationURL === "/")) {
-                $it.addClass("current_page_item");
-                return;
-            }
-            if (locationURL.indexOf($it.find("a").attr("href")) > -1 && i !== 0) {
-                $it.addClass("current_page_item");
-            }
+    $("#header-navi li").each(function () {
+        var $a = $(this).find("a");
+        console.log($a.attr("href"));
+        if ($a.attr("href") === latkeConfig.servePath + location.pathname) {
+            $(this).addClass("current_page_item");
+        } else if (/\/[0-9]+$/.test(location.pathname)) {
+            $("#header-navi li")[0].className = "current_page_item";
         }
     });
         

@@ -21,10 +21,16 @@
     </form>
 </div>
 <div class="advise">${Repeatedlyrefresh1} 
-    <a href="${staticServePath}/blog-articles-feed.do" rel="external">RSS</a> ${Repeatedlyrefresh2}
+    <a href="${servePath}/blog-articles-feed.do" rel="external">RSS</a> ${Repeatedlyrefresh2}
     <a href="javascript:void(0)">${Repeatedlyrefresh3}</a>
 </div>
-<script type="text/javascript" src="${staticServePath}/js/common${miniPostfix}.js?${staticResourceVersion}" charset="utf-8"></script>
-<script type="text/javascript" src="${staticServePath}/skins/${skinDirName}/js/core${miniPostfix}.js?${staticResourceVersion}"></script>
-<script type="text/javascript" src="${staticServePath}/skins/${skinDirName}/js/javascription${miniPostfix}.js?${staticResourceVersion}"></script>
+<script type="text/javascript" src="${servePath}/js/common${miniPostfix}.js?${staticResourceVersion}" charset="utf-8"></script>
+<script type="text/javascript" src="${servePath}/skins/${skinDirName}/js/core${miniPostfix}.js?${staticResourceVersion}"></script>
+<script type="text/javascript" src="${servePath}/skins/${skinDirName}/js/javascription${miniPostfix}.js?${staticResourceVersion}"></script>
 ${plugins}
+<script type="text/javascript">
+    var latkeConfig = {
+        "servePath": "${servePath}",
+        "staticServePath": "${servePath}"
+    };
+</script>
