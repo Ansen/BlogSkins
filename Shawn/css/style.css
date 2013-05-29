@@ -59,7 +59,7 @@ code.small {font:bold 10px Georgia;}
     line-height: 0;
     overflow: hidden;
 }
-
+.collapse-ico, .expand-ico{font-size: 14px;}
 #top {
     filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#E5E5E5');
     height: 30px;
