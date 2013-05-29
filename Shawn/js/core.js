@@ -71,5 +71,23 @@ var showRelatedul = function (id, label, tags) {
     } else {
         $relatedul.slideUp().addClass("hidden");
     }
-}
+};
 var common = new Common();
+
+var currentYear = (new Date()).getFullYear(),
+year = currentYear;
+$("#archiveSide li").each(function (i) {
+    var $this = $(this);
+    
+    // hide other year month archives
+    if ($this.data("year") !== currentYear) {
+        $(this).hide()
+    }
+    
+    // append year archive
+    if (year !== $this.data("year")) {
+        year = $this.data("year");
+        $this.before("<li class='archive-year'><div onclick='collapseArchive(this, " + 
+            year + ")' class='expand-ico'>" + year + "&nbsp;\u5e74</div></li>");
+    }
+});
