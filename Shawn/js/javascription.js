@@ -801,7 +801,7 @@ $(document).ready(function() {
         },
         function() {
             $(this).fadeTo("fast", "0.7")
-        }).fadeTo("normal", "0.7")
+        })
     }
     var G = $("#footer .g2b,#footer .b2t");
     G.hover(function() {
